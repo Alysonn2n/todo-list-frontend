@@ -1,0 +1,16 @@
+nav {
+    height: 7rem;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 3rem;
+}
+
+.brand-logo, .hide-on-med-and-down {
+    position: static;
+}

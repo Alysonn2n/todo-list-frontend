@@ -1,0 +1,29 @@
+<div class='card'>
+    <div class='card-content'>
+        <h4 class='list-header'>
+            Itens Completed
+        </h4>
+        <div *ngIf="itensDone.length !== 0">
+            <table class='highlight'>
+                <thead>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Completed?</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let itens of itensDone;">
+                        <td>
+                        {{itens.name}}
+                        </td>
+                        <td>
+                        {{itens.author}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h5 class='table-header' *ngIf="itensDone.length == 0">
+            You haven't Completed any task
+        </h5>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class='card'>
+  <div class='card-content'>
+    <h4 class='list-header'>
+      To-do List
+    </h4>
+    <div *ngIf="itensCreated.length !== 0">
+      <table class='highlight'>
+        <thead>
+          <th>Name</th>
+          <th>Author</th>
+          <th class='right'>Completed</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let itens of itensCreated;">
+            <td>
+              {{itens.name}}
+            </td>
+            <td>
+              {{itens.author}}
+            </td>
+            <td class='right-align'>
+              <button class='btn-floating btn-large waves-effect btn-small'>
+                <img
+                  class='material-icons'
+                  src='../../../../assets/icons/done_white_24dp.svg'>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class='btn waves-effect waves-light'>
+        Done all Tasks
+        <img
+          class="material-icons"
+          src='../../../../assets/icons/done_all_black_24dp.svg'
+        >
+      </button>
+    </div>
+    <h5 class='table-header' *ngIf="itensCreated.length == 0">
+      You haven't itens at your list :(
+    </h5>
+  </div>
+</div>
