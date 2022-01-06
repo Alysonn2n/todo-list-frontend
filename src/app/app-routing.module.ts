@@ -4,14 +4,19 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
-    path: 'record',
+    path: '',
     loadChildren: () =>
-    import('./pages/list-records/list-records.module').then(m => m.ListRecordsModule)
-  }
+    import('./pages/tasks/tasks.module').then(m => m.TasksModule)
+  },
+  /* {
+    path: 'update',
+    loadChildren: () =>
+
+  } */
 ];
 
 @NgModule({

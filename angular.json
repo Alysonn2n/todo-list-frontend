@@ -36,6 +36,7 @@
               "./node_modules/materialize-css/dist/css/materialize.css"
             ],
             "scripts": [
+              "./node_modules/hammerjs/hammer.js",
               "./node_modules/materialize-css/dist/js/materialize.js"
             ]
           },

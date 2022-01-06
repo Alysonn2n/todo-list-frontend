@@ -1,0 +1,47 @@
+section {
+    height: 100%;
+}
+
+.container {
+    width: 85%;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.card {
+    height: 30%;
+}
+
+.card.card-form {
+    margin: 3rem 0;
+}
+
+li:hover {
+    cursor: pointer;
+    background: #ddd;
+    -webkit-transition: .3s;
+    transition: 0.3s
+}
+
+.table-header {
+    color: #ee6e73;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 3rem;
+}
+
+/* on text format */
+.list-author {
+    float: right;
+}
+
+.list-header {
+    color: #ee6e73;
+}
+

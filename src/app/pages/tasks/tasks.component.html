@@ -1,0 +1,124 @@
+<section class='section container'>
+  <div class='row'>
+    <div class='col s12'>
+      <div class='card card-form'>
+        <div class='card-content'>
+          <form [formGroup]="form" (ngSubmit)="Submit()">
+            <div class="row">
+              <div class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input
+                      formControlName="name"
+                      class="validate"
+                      id="name"
+                      type="text"
+                    >
+                    <label for="name">Item Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input
+                      formControlName="author"
+                      id="author"
+                      class="validate"
+                      type="text"
+                    >
+                    <label for="author">Author</label>
+                  </div>
+                </div>
+              </div>
+      
+              <div class='col s12' style="display: flex; justify-content: center;">
+                <button
+                  [disabled]="form.status !== 'VALID'"
+                  class="waves-effect waves-light btn">
+                    button
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- todo table -->
+    <div class='col s12 m12 l6'>
+      <div class='card'>
+        <div class='card-content'>
+          <h4 class='list-header'>
+            To-do List
+          </h4>
+          <div *ngIf="tasksCreated.length !== 0">
+            <table class='highlight responsive-table'>
+              <thead>
+                <th>Name</th>
+                <th>Author</th>
+                <th class='center-align'>Remove</th>
+                <th class='center-align'>Edit</th>
+                <th class='center-align'>Completed</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let task of tasksCreated;">
+                  <td>
+                    {{task.name}}
+                  </td>
+                  <td>
+                    {{task.author}}
+                  </td>
+                  <td class='center-align'>
+                    <button href="#modal1"
+                      class='btn-floating btn-small red modal-trigger'
+                      (click)="Remove(task.id)">
+                      <i class="material-icons">remove</i>
+                    </button>
+                  </td>
+                  <td class='center-align'>
+                    <button class='btn-floating btn-small'>
+                      <i class="material-icons">edit</i>
+                    </button>
+                  </td>
+                  <td class='center-align'>
+                    <button class='btn-floating btn-large waves-effect btn-small pulse'>
+                      <img
+                        class='material-icons'
+                        src='../../../../assets/icons/done_white_24dp.svg'>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class='btn waves-effect waves-light'>
+              Done all Tasks
+              <img
+                class="material-icons"
+                src='../../../../assets/icons/done_all_black_24dp.svg'
+              >
+            </button>
+          </div>
+          <h5 class='table-header' *ngIf="tasksCreated.length == 0">
+            You haven't tasks at your list :(
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class='col s12 m12 l6'>
+        <tasks-done></tasks-done>
+    </div>
+  </div>
+</section>
+
+
+<!-- modal -->
+<div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Remove Item</h4>
+      <p>
+        Are you certain that you wanna do that?
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a class="modal-close waves-effect waves-red btn-flat">Disagree</a>
+    </div>
+  </div>
+</div>

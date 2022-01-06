@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ListItens } from 'src/app/models/itens-class';
+import { Task } from 'src/app/models/task-class';
 
 @Component({
   selector: 'tasks-done',
@@ -8,7 +8,7 @@ import { ListItens } from 'src/app/models/itens-class';
 })
 export class TasksDoneComponent implements OnInit {
 
-  @Input() itensDone: ListItens[] = [];
+  @Input() itensDone: Task[] = [];
 
   constructor() { }
 
